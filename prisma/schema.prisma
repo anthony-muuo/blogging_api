@@ -12,3 +12,25 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Users {
+  id String @id @default(uuid())
+  firstName String @map("user_firstname")
+  lastName String @map("user_lastname")
+  emailAddress String @unique @map("user_emailAddress")
+  username String @unique @map("user_username")
+  posts Posts[]
+  @@map("user_table")
+}
+
+model Posts{
+  id String @default(uuid()) @id @map("posts_id")
+  title String @map("posts_title")
+  content String @map("posts_content")
+  createdAt DateTime @default(now())
+  lastUpdated DateTime @updatedAt
+  isDeleted Boolean @map("posts_deleted")
+  userId String
+  user Users @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@map("posts_table")
+}
