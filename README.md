@@ -50,7 +50,7 @@
 
 ### `GET /users/:id`
 
-- **Description**: Fetch a specific user by ID.
+- **Description**: Fetch a specific user by ID a plus posts he/she have created
 - **Example**: `/users/1`
 - **Response**:
 
@@ -60,7 +60,27 @@
   "firstName": "John",
   "lastName": "Doe",
   "emailAddress": "john@example.com",
-  "username": "johndoe"
+  "username": "johndoe",
+  "posts": [
+    {
+      "id": "327bb10c-fa96-4ac0-a4ac-3a5fd6d03bcb",
+      "title": "Asperiores deleniti aspernatur eveniet et at error similique et. Aut suscipit rerum qui illum qui. Repellat tempore cupiditate qui voluptatem magnam ex eos quis. Aut omnis tempore.",
+      "content": "Voluptatem consequuntur fugiat impedit voluptates molestias qui inventore dolores eos.",
+      "createdAt": "2025-06-14T15:22:34.595Z",
+      "lastUpdated": "2025-06-14T15:22:34.595Z",
+      "isDeleted": false,
+      "userId": "c336b548-0c0b-4fba-bab8-db29c9aed53d"
+    },
+    {
+      "id": "33284d5a-f3e1-4166-8621-7a3d3767eb7d",
+      "title": "rerum-facere-dolorum",
+      "content": "Quis neque sunt harum velit saepe.",
+      "createdAt": "2025-06-14T15:23:05.563Z",
+      "lastUpdated": "2025-06-14T15:23:05.563Z",
+      "isDeleted": false,
+      "userId": "c336b548-0c0b-4fba-bab8-db29c9aed53d"
+    }
+  ]
 }
 ```
 

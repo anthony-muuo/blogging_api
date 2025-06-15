@@ -24,10 +24,11 @@ app.get("/users", async (_req, res) => {
 app.get("/users/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const getUser = await client.users.findUnique({
+    const getUserPlusPosts = await client.users.findUnique({
       where: { id },
+      include: { posts: true },
     });
-    res.status(200).json(getUser);
+    res.status(200).json(getUserPlusPosts);
   } catch (error) {
     res.status(500).json("error fetching specific user");
   }
