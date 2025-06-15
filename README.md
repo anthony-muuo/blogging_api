@@ -244,20 +244,18 @@
 
 ```
      DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
-     PORT=5500
 ```
 
 4. **Prisma setup**
 
 ```bash
-   npx prisma init
    npx prisma migrate dev --name init
 ```
 
 5. **Run the server**
 
 ```bash
-   npm start
+   npm run dev
 ```
 
 ---
