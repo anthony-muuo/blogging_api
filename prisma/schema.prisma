@@ -29,7 +29,7 @@ model Posts{
   content String @map("posts_content")
   createdAt DateTime @default(now())
   lastUpdated DateTime @updatedAt
-  isDeleted Boolean @map("posts_deleted")
+  isDeleted Boolean @map("posts_deleted") @default(false)
   userId String
   user Users @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@map("posts_table")
